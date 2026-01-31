@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neon Arcade Voetbal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="game" width="960" height="540" aria-label="Arcade voetbalspel"></canvas>
+
+    <div id="hud">
+      <div class="scoreboard">
+        <div class="team">YOU <span id="score-player">0</span></div>
+        <div class="timer" id="timer">90</div>
+        <div class="team">CPU <span id="score-ai">0</span></div>
+      </div>
+      <div class="meter">
+        <div class="meter-label">POWER</div>
+        <div class="meter-bar"><div id="power-fill"></div></div>
+      </div>
+      <div class="hints">
+        <div><strong>Bewegen:</strong> WASD / pijlen</div>
+        <div><strong>Schieten:</strong> houd Spatie</div>
+        <div><strong>Pass:</strong> houd Shift</div>
+        <div><strong>Tackle:</strong> Ctrl</div>
+        <div><strong>Pauze:</strong> P</div>
+      </div>
+    </div>
+
+    <div id="menu" class="panel visible">
+      <h1>NEON FOOTBALL</h1>
+      <p>Easy to learn, hard to master. Scoor binnen 60-120 seconden!</p>
+      <button id="play-btn">Play</button>
+      <div class="controls">
+        <h3>Controls</h3>
+        <p>WASD / pijlen: bewegen</p>
+        <p>Spatie: schieten (hold voor power)</p>
+        <p>Shift: passen (hold voor power)</p>
+        <p>Ctrl: tackle</p>
+        <p>P: pauze</p>
+      </div>
+      <div class="settings">
+        <h3>Settings</h3>
+        <label>
+          Difficulty
+          <input id="difficulty" type="range" min="0.7" max="1.6" step="0.1" value="1" />
+        </label>
+        <label class="toggle">
+          <input id="fx-toggle" type="checkbox" checked />
+          FX aan/uit
+        </label>
+      </div>
+    </div>
+
+    <div id="pause" class="panel">
+      <h2>Pauze</h2>
+      <p>Druk op P om verder te spelen</p>
+    </div>
+
+    <div id="goal" class="panel">
+      <h2>GOAL!</h2>
+      <p>Nice shot.</p>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
